@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3qgb5yedhu3i"]
+
+[ext_resource type="PackedScene" uid="uid://dqu6bwa7xtxb6" path="res://ball.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://dm8kdmrj16bwe" path="res://plank.tscn" id="2_0xm2m"]
+
+[node name="Main" type="Node"]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("1_0xm2m")]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(293, 346)
