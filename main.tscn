@@ -1,11 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3qgb5yedhu3i"]
+[gd_scene load_steps=5 format=3 uid="uid://c3qgb5yedhu3i"]
 
 [ext_resource type="PackedScene" uid="uid://dqu6bwa7xtxb6" path="res://ball.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://dm8kdmrj16bwe" path="res://plank.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bcrju4mrxbs7m" path="res://area_2d.tscn" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://cr7j7is8s6edn" path="res://area_2d.gd" id="4_lquwl"]
 
 [node name="Main" type="Node"]
 
 [node name="RigidBody2D" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(229, 87)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("1_0xm2m")]
+position = Vector2(224, 436)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_0xm2m")]
-position = Vector2(293, 346)
+position = Vector2(263, 291)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(223, 570)
+rotation = 0.423266
+
+[node name="Area2D" parent="." instance=ExtResource("3_1bvp3")]
+position = Vector2(203, 266)
+script = ExtResource("4_lquwl")
+
+[node name="StaticBody2D4" parent="Area2D" instance=ExtResource("2_0xm2m")]
+position = Vector2(183, 225)
+rotation = 2.00782
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

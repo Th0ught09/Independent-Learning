@@ -9,11 +9,11 @@ height = 180.0
 [node name="RigidBody2D" type="RigidBody2D"]
 position = Vector2(195, 142)
 contact_monitor = true
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_41u45")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(7.38014, 7.54921)
+position = Vector2(-19, -7)
+scale = Vector2(1.94318, 2.00238)
 texture = ExtResource("1_x8fbi")
